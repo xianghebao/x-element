@@ -1,0 +1,70 @@
+.x-button {
+  --x-button-color: #fff;
+  --x-button-background-color: var(--x-color-primary);
+  --x-button-border-color: var(--x-color-primary);
+  --x-button-hover-color: var(--x-color-primary-dark-2);
+  --x-button-hover-background-color: var(--x-color-primary-light-5);
+  --x-button-hover-border-color: var(--x-color-primary-dark-2);
+  --x-button-active-color: var(--x-color-primary);
+  --x-button-active-background-color: var(--x-color-primary-light-8);
+  --x-button-active-border-color: var(--x-color-primary);
+}
+
+.x-button {
+  display: inline-flex;
+  color: var(--x-button-color);
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--x-button-border-color);
+  text-align: center;
+  line-height: 1;
+  height: 32px;
+  outline: none;
+  border-radius: var(--x-border-radius-small);
+  background-color: var(--x-button-background-color);
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    color: var(--x-button-hover-color);
+    border-color: var(--x-button-hover-border-color);
+    background-color: var(--x-button-hover-background-color);
+  }
+  &:active {
+    color: var(--x-button-active-color);
+    border-color: var(--x-button-active-border-color);
+    background-color: var(--x-button-active-background-color);
+  }
+  &.is-plain {
+    --x-button-hover-text-color: var(--x-color-primary);
+    --x-button-hover-bg-color: var(--x-fill-color-blank);
+    --x-button-hover-border-color: var(--x-color-primary);
+  }
+  &.is-round {
+    border-radius: var(--x-border-radius-round);
+  }
+  &.is-disabled {
+    color: var(--x-text-color-disabled);
+    background-color: var(--x-fill-color-blank);
+    border-color: var(--x-border-color-disabled);
+    cursor: not-allowed;
+  }
+}
+
+/* .x-button--warning {
+        --x-button-color: var(--x-color-warning);
+        --x-button-background-color: var(--x-color-warning-light-5) ;
+        --x-button-border-color: var(--x-color-warning);
+        --x-button-hover-color: var(--x-color-warning-dark-2);
+        --x-button-hover-background-color: var(--x-color-warning-light-9);
+} */
+
+@each $val in primary, success, warning, danger {
+  .x-button--$(val) {
+    --x-button-color: var(--x-color-$(val));
+    --x-button-background-color: var(--x-color-$(val)-light-5);
+    --x-button-border-color: var(--x-color-$(val));
+    --x-button-hover-color: var(--x-color-$(val)-dark-2);
+    --x-button-hover-background-color: var(--x-color-$(val)-light-9);
+  }
+}

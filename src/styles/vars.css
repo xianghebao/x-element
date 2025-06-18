@@ -1,0 +1,75 @@
+:root {
+  /* colors */
+  --x-color-primary: #409eff;
+  --x-color-primary-light-3: rgb(50.8, 116.6, 184.5);
+  --x-color-primary-light-5: rgb(42, 89, 137.5);
+  --x-color-primary-light-7: rgb(33.2, 61.4, 90.5);
+  --x-color-primary-light-8: rgb(28.8, 47.6, 67);
+  --x-color-primary-light-9: rgb(24.4, 33.8, 43.5);
+  --x-color-primary-dark-2: rgb(102.2, 177.4, 255);
+  --x-color-success: #67c23a;
+  --x-color-success-light-3: rgb(78.1, 141.8, 46.6);
+  --x-color-success-light-5: rgb(61.5, 107, 39);
+  --x-color-success-light-7: rgb(44.9, 72.2, 31.4);
+  --x-color-success-light-8: rgb(36.6, 54.8, 27.6);
+  --x-color-success-light-9: rgb(28.3, 37.4, 23.8);
+  --x-color-success-dark-2: rgb(133.4, 206.2, 97.4);
+  --x-color-warning: #e6a23c;
+  --x-color-warning-light-3: rgb(167, 119.4, 48);
+  --x-color-warning-light-5: #7d5b28;
+  --x-color-warning-light-7: rgb(83, 62.6, 32);
+  --x-color-warning-light-8: rgb(62, 48.4, 28);
+  --x-color-warning-light-9: rgb(41, 34.2, 24);
+  --x-color-warning-dark-2: rgb(235, 180.6, 99);
+  --x-color-danger: #f56c6c;
+  --x-color-danger-light-3: rgb(177.5, 81.6, 81.6);
+  --x-color-danger-light-5: rgb(132.5, 64, 64);
+  --x-color-danger-light-7: rgb(87.5, 46.4, 46.4);
+  --x-color-danger-light-8: rgb(65, 37.6, 37.6);
+  --x-color-danger-light-9: rgb(42.5, 28.8, 28.8);
+  --x-color-danger-dark-2: rgb(247, 137.4, 137.4);
+  --x-color-error: #f56c6c;
+  --x-color-error-light-3: rgb(177.5, 81.6, 81.6);
+  --x-color-error-light-5: rgb(132.5, 64, 64);
+  --x-color-error-light-7: rgb(87.5, 46.4, 46.4);
+  --x-color-error-light-8: rgb(65, 37.6, 37.6);
+  --x-color-error-light-9: rgb(42.5, 28.8, 28.8);
+  --x-color-error-dark-2: rgb(247, 137.4, 137.4);
+  --x-color-info: #909399;
+  --x-color-info-light-3: rgb(106.8, 108.9, 113.1);
+  --x-color-info-light-5: rgb(82, 83.5, 86.5);
+  --x-color-info-light-7: rgb(57.2, 58.1, 59.9);
+  --x-color-info-light-8: rgb(44.8, 45.4, 46.6);
+  --x-color-info-light-9: rgb(32.4, 32.7, 33.3);
+  --x-color-info-dark-2: rgb(166.2, 168.6, 173.4);
+
+  /* border */
+  --x-border-width: 1px;
+  --x-border-style: solid;
+  --x-border-color-light-3: var(--x-color-primary-light-3);
+  --x-border-color-light-7: var(--x-color-primary-light-7);
+  --x-border-color-hover: var(--x-text-color-disabled);
+  --x-border: var(--x-border-width) var(--x-border-style) var(--x-color-primary);
+  --x-border-radius: 4px;
+  --x-border-radius-small: 2px;
+  --x-border-radius-round: 20px;
+  --x-border-radius-circle: 100%;
+
+  /* font */
+  --x-font-size-extra-large: 20px;
+  --x-font-size-large: 18px;
+  --x-font-size-medium: 16px;
+  --x-font-size-base: 14px;
+  --x-font-size-small: 13px;
+  --x-font-size-extra-small: 12px;
+  --x-font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+    "微软雅黑", Arial, sans-serif;
+  --x-font-weight-primary: 500;
+
+  /* disabled */
+  --x-text-disabled-bg-color: var(--x-fill-color-light);
+  --x-text-disabled-text-color: var(--x-color-info-dark-2);
+  --x-text-disabled-border-color: var(--x-border-color-light);
+
+  --x-transition-duration:1s;
+}

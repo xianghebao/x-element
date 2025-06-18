@@ -1,0 +1,74 @@
+.x-collapse {
+    --x-collapse-border-color: var(--x-border-color-light-7);
+    --x-collapse-header-height: 48px;
+    --x-collapse-header-text-color: var(--x-fill-color-primary);
+    --x-collapse-header-bg-color: var(--x-fill-color-blank);
+    --x-collapse-content-bg-color: var(--x-fill-color-blank);
+    --x-collapse-content-text-color: var(--x-fill-color-primary);
+    --x-collapse-disabled-text-color: var(--x-disabled-text-color);
+    --x-collapse-disabled-border-color: var(--x-border-color-light-5);
+    --x-collapse-header-font-size: 13px;
+    --x-collapse-content-font-size: 13px;
+    border-top: 1px solid var(--x-collapse-border-color);
+    border-bottom: 1px solid var(--x-collapse-border-color);
+}
+
+.x-collapse-item__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--x-collapse-header-height);
+    line-height: var(--x-collapse-header-height);
+    outline: none;
+    font-size: var(--x-collapse-header-font-size);
+    color: var(--x-collapse-header-text-color);
+    background-color: var(--x-collapse-header-bg-color);
+    cursor: pointer;
+    font-weight: 500;
+    transition: border-bottom-color var(--x-transition-duration);
+    border-bottom: 1px solid var(--x-collapse-border-color);
+    &.is-disabled  {
+        color: var(--x-text-disabled-text-color);
+        cursor: not-allowed;
+        background-image: none;
+    }   
+    &.is-active {
+        border-bottom-color: transparent;
+    } 
+}
+.x-collapse-item__content {
+    will-change: height;
+    background-color: var(--x-collapse-content-bg-color);
+    overflow: hidden;
+    box-sizing: border-box;
+    font-size: var(--x-collapse-content-font-size);
+    color: var(--x-collapse-content-text-color);
+    border-bottom: 1px solid var(--x-collapse-border-color);
+
+    /* 这个padding在动画中会有问题,通过外加一个父元素盒子包裹解决 */
+    padding-bottom:25px;    
+}
+
+
+.slide-enter-active, .slide-leave-active {
+    transition: height var(--x-transition-duration) ease-in-out;
+}
+
+
+/* .fade-enter-from {
+    opacity: 0;
+}
+.fade-enter-active {
+    transition: opacity var(--x-transition-duration) ease-in-out;
+
+}
+
+.fade-leave-to, .fade-enter-from{
+    opacity: 0;
+}
+.fade-leave-active, .fade-enter-active {
+    transition: opacity var(--x-transition-duration) ease-in-out;
+}
+.fade-enter-to,.fade-leave-from {
+    opacity: 1;
+} */
