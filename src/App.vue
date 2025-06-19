@@ -5,11 +5,14 @@ import CollapseItem from "./components/Collapse/XCollapseItem.vue";
 import Button from "./components/Button/XButton.vue";
 import Icon from "./components/Icon/XIcon.vue";
 import Tooltip from "./components/Tooltip/XTooltip.vue";
-
+import type {TooltipInstance} from './components/Tooltip/types'
 const trigger = "click"
 const buttonRef = ref<HTMLButtonElement>();
 const openValue = ref(["a"]);
-
+const TooltipRef = ref<TooltipInstance>();
+const onk = () =>{
+  TooltipRef.value?.show()
+}
 onMounted(() => {
   console.log(buttonRef.value);
 });
@@ -18,7 +21,7 @@ onMounted(() => {
 <template>
   <a href="">button</a>
   <main>
-    <Button ref="buttonRef" type="primary" plain> test button </Button>
+    <Button ref="buttonRef" type="primary" plain @click="onk"> test button </Button>
     <Button ref="buttonRef" type="success" round> test button </Button>
     <Button ref="buttonRef" type="warning"> test button </Button>
     <Button ref="buttonRef" type="warning" disabled> test button </Button>
@@ -53,7 +56,7 @@ onMounted(() => {
     <Icon icon="fa-solid fa-user-secret" type="primary" color="red" />
   </div>
   <a href="">Tooltip</a><br/>
-  <Tooltip content="hellow word" placement="bottom" :trigger="trigger">
+  <Tooltip content="hellow word" placement="bottom" :trigger="trigger" manual ref="TooltipRef">
     <h1>哈哈哈哈tooltip</h1>
     <!-- 传了具名插槽， 上面的content属性就失效了 -->
     <template #content>

@@ -11,8 +11,8 @@
   </div>
 </template>
 <script setup lang="ts">
-import { reactive, ref, watch } from "vue";
-import type { TooltipEmits, TooltipProps } from "./types";
+import { onUnmounted, reactive, ref, watch } from "vue";
+import type { TooltipEmits, TooltipInstance, TooltipProps } from "./types";
 import type { Instance } from "@popperjs/core";
 import { createPopper } from "@popperjs/core";
 import useClickOutside from "@/hooks/useClickOutside";
@@ -30,7 +30,7 @@ let popperInstance: Instance | null = null;
 let events: Record<string, unknown> = reactive({});
 let outerEvents: Record<string, unknown> = reactive({});
 useClickOutside(popperContainer, () => {
-  if (isOpen.value && props.trigger === "click") {
+  if (isOpen.value && props.trigger === "click" && !props.manual) {
     close();
   }
 });
@@ -58,7 +58,9 @@ const attachEvents = () => {
     events["click"] = togglePopper;
   }
 };
-attachEvents();
+if (!props.manual) {
+  attachEvents();
+}
 
 watch(
   isOpen,
@@ -75,6 +77,15 @@ watch(
   },
   { flush: "post" }
 );
+
+defineExpose<TooltipInstance>({
+  show: open,
+  hide: close,
+});
+
+onUnmounted(() => {
+  popperInstance?.destroy();
+});
 </script>
 <style>
 .x-tooltip {
