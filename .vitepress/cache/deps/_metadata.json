@@ -1,0 +1,67 @@
+{
+  "hash": "12e2e3f7",
+  "configHash": "c164d0dd",
+  "lockfileHash": "7d06af6f",
+  "browserHash": "134366e4",
+  "optimized": {
+    "vue": {
+      "src": "../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "3475aad6",
+      "needsInterop": false
+    },
+    "vitepress > @vue/devtools-api": {
+      "src": "../../../node_modules/@vue/devtools-api/dist/index.js",
+      "file": "vitepress___@vue_devtools-api.js",
+      "fileHash": "48bb3cd3",
+      "needsInterop": false
+    },
+    "vitepress > @vueuse/core": {
+      "src": "../../../node_modules/@vueuse/core/index.mjs",
+      "file": "vitepress___@vueuse_core.js",
+      "fileHash": "7e5c59d4",
+      "needsInterop": false
+    },
+    "@fortawesome/fontawesome-svg-core": {
+      "src": "../../../node_modules/@fortawesome/fontawesome-svg-core/index.mjs",
+      "file": "@fortawesome_fontawesome-svg-core.js",
+      "fileHash": "8a9fac4f",
+      "needsInterop": false
+    },
+    "@fortawesome/free-solid-svg-icons": {
+      "src": "../../../node_modules/@fortawesome/free-solid-svg-icons/index.mjs",
+      "file": "@fortawesome_free-solid-svg-icons.js",
+      "fileHash": "1f53ce1d",
+      "needsInterop": false
+    },
+    "@fortawesome/vue-fontawesome": {
+      "src": "../../../node_modules/@fortawesome/vue-fontawesome/index.es.js",
+      "file": "@fortawesome_vue-fontawesome.js",
+      "fileHash": "bf95e680",
+      "needsInterop": false
+    },
+    "@popperjs/core": {
+      "src": "../../../node_modules/@popperjs/core/lib/index.js",
+      "file": "@popperjs_core.js",
+      "fileHash": "3c74cee1",
+      "needsInterop": false
+    },
+    "@theme/index": {
+      "src": "../../../node_modules/vitepress/dist/client/theme-default/index.js",
+      "file": "@theme_index.js",
+      "fileHash": "795434d9",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-7PCHAF5T": {
+      "file": "chunk-7PCHAF5T.js"
+    },
+    "chunk-T266C5IK": {
+      "file": "chunk-T266C5IK.js"
+    },
+    "chunk-XJPKZAQV": {
+      "file": "chunk-XJPKZAQV.js"
+    }
+  }
+}
