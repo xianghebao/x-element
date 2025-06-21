@@ -29,7 +29,7 @@
 import type { DropdownEmits, DropdownProps, MenuOption, DropdownInstance } from "./types";
 import ToolTip from "../Tooltip/XTooltip.vue";
 import RenderVnode from "./RenderVnode";
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 import type { TooltipInstance } from "../Tooltip/types";
 const props = withDefaults(defineProps<DropdownProps>(), {
   hideAfterClick: true,
@@ -46,11 +46,12 @@ const itemClick = (e: MenuOption) => {
   emits("select", e);
   if (props.hideAfterClick) {
     tooltipRef.value?.hide();
-  } 
+  }
 };
 
 defineExpose({
-  show: tooltipRef.value?.show,
-  hide: tooltipRef.value?.hide,
+  //创建一个闭包，防止不能获取到实例，当再次调用时就可以拿到最新的值，其他的组件也要修改
+  show: () => tooltipRef.value?.show,
+  hide: () => tooltipRef.value?.hide,
 });
 </script>
