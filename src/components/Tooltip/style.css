@@ -1,0 +1,95 @@
+.x-tooltip {
+  --x-popover-bg-color: var(--x-bg-color-overlay);
+  --x-popover-font-size: var(--x-font-size-base);
+  --x-popover-border-radius: var(--x-border-radius);
+  --x-popover-padding: 12px;
+  --x-popover-arrow-color: blue;
+  display: inline-block;
+}
+
+.x-tooltip {
+  .x-tooltip__popper {
+    background-color: var(--x-popover-bg-color);
+    font-size: var(--x-popover-font-size);
+    border-radius: var(--x-popover-border-radius);
+    padding: var(--x-popover-padding);
+    color: var(--x-text-color-regular);
+    /* line-height: 1; */
+    text-align: justify;
+    box-shadow: var(--x-box-shadow-light);
+    word-wrap: break-all;
+    box-sizing: border-box;
+    border: 1px solid #000;
+    z-index: 1000;
+  }
+  #arrow,
+  #arrow::before {
+    position: absolute;
+    display: block;
+    width: 8px;
+    height: 8px;
+    content: "";
+    background-color: #fff;
+  }
+  #arrow {
+    visibility: hidden;
+  }
+  #arrow::before {
+    visibility: visible;
+    transform: rotate(45deg);
+  }
+  [data-popper-placement^="top"] {
+    #arrow {
+      bottom: -5px;
+    }
+  }
+  [data-popper-placement^="bottom"] > #arrow {
+    top: -5px;
+  }
+  [data-popper-placement^="left"] {
+    #arrow {
+      right: -5px;
+    }
+  }
+  [data-popper-placement^="right"] {
+    #arrow {
+      left: -5px;
+    }
+  }
+
+  [data-popper-placement^="top"] {
+    #arrow::before {
+      border-right: 1px solid #000;
+      border-bottom: 1px solid #000;
+    }
+  }
+  [data-popper-placement^="bottom"] > #arrow::before {
+    border-left: 1px solid #000;
+    border-top: 1px solid #000;
+  }
+  [data-popper-placement^="left"] {
+    #arrow::before {
+      border-top: 1px solid #000;
+      border-right: 1px solid #000;
+    }
+  }
+  [data-popper-placement^="right"] {
+    #arrow::before {
+      border-left: 1px solid #000;
+      border-bottom: 1px solid #000;
+    }
+  }
+}
+
+.fade-leave-to,
+.fade-enter-from {
+  opacity: 0;
+}
+.fade-leave-active,
+.fade-enter-active {
+  transition: opacity var(--x-transition-duration) ease-in-out;
+}
+.fade-enter-to,
+.fade-leave-from {
+  opacity: 1;
+}

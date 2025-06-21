@@ -32,8 +32,13 @@ export default defineConfig({
       },
       {
         text: "Basic",
-        items: [{ text: "Button", link: "/components/button" }],
-      },
+        items: [{ text: "Button", link: "/components/button" },
+          { text: "Collapse", link: "/components/Collapse" },
+          { text: "Icon", link: "/components/Icon" },
+          { text: "Tooltip", link: "/components/Tooltip" }
+        ],
+        
+      }
     ],
 
     socialLinks: [{ icon: "github", link: "https://github.com/vuejs/vitepress" }],

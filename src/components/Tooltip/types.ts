@@ -4,6 +4,7 @@ export interface TooltipProps {
   content?: string;
   trigger?: "hover" | "click";
   manual?: boolean;
+  modifiers?: string[];
 }
 
 export interface TooltipEmits {

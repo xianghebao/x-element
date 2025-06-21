@@ -3,11 +3,14 @@
     <div class="x-tooltip__trigger" ref="triggerNode" v-on="events">
       <slot></slot>
     </div>
-    <div class="x-tooltip__popper" ref="popperNode" v-if="isOpen">
-      <slot name="content">
-        {{ content }}
-      </slot>
-    </div>
+    <Transition name="fade">
+      <div class="x-tooltip__popper" ref="popperNode" v-if="isOpen">
+        <slot name="content">
+          {{ content }}
+        </slot>
+        <div id="arrow" data-popper-arrow></div>
+      </div>
+    </Transition>
   </div>
 </template>
 <script setup lang="ts">
@@ -27,8 +30,16 @@ const popperNode = ref<HTMLElement>();
 const triggerNode = ref<HTMLElement>();
 const popperContainer = ref<HTMLElement>();
 let popperInstance: Instance | null = null;
-let events: Record<string, unknown> = reactive({});
-let outerEvents: Record<string, unknown> = reactive({});
+const events: Record<string, unknown> = reactive({});
+const outerEvents: Record<string, unknown> = reactive({});
+const modifyProps = [
+  {
+    name: "offset",
+    options: {
+      offset: [0, 6],
+    },
+  },
+];
 useClickOutside(popperContainer, () => {
   if (isOpen.value && props.trigger === "click" && !props.manual) {
     close();
@@ -48,17 +59,15 @@ const togglePopper = () => {
 };
 const attachEvents = () => {
   if (props.trigger === "hover") {
-    events = {
-      mouseenter: open,
-    };
-    outerEvents = {
-      mouseleave: close,
-    };
+    events["mouseenter"] = open;
+    outerEvents["mouseleave"] = close;
   } else if (props.trigger === "click") {
     events["click"] = togglePopper;
   }
 };
+console.log(props)
 if (!props.manual) {
+  console.log("执行了")
   attachEvents();
 }
 
@@ -69,6 +78,7 @@ watch(
       if (triggerNode.value && popperNode.value) {
         popperInstance = createPopper(triggerNode.value, popperNode.value, {
           placement: props.placement,
+          modifiers:modifyProps
         });
       } else {
         popperInstance?.destroy();
@@ -87,8 +97,4 @@ onUnmounted(() => {
   popperInstance?.destroy();
 });
 </script>
-<style>
-.x-tooltip {
-  display: inline-block;
-}
-</style>
+<style></style>

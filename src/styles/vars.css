@@ -42,8 +42,21 @@
   --x-color-info-light-8: rgb(44.8, 45.4, 46.6);
   --x-color-info-light-9: rgb(32.4, 32.7, 33.3);
   --x-color-info-dark-2: rgb(166.2, 168.6, 173.4);
-
+  --x-color-text-primary: #303133;
+  --x-color-text-regular: #606266;
+  --x-color-text-secondary: #909399;
+  --x-color-text-placeholder: #c0c4cc;
+  --x-color-text-disabled: #c0c4cc;
+  --x-color-text-light: #d9d9d9;
+  --x-bg-color-overlay: rgba(253, 251, 251, 0.5);
+  /* --x-bg-color-overlay-light: rgba(0, 0, 0, 0.1);
+  --x-bg-color-overlay-lighter: rgba(0, 0, 0, 0.05);
+  --x-bg-color-overlay-lightest: rgba(0, 0, 0, 0.02);
+  --x-bg-color-overlay-transparent: rgba(0, 0, 0, 0);
+  --x-bg-color-overlay-transparent-light: rgba(0, 0, 0, 0.05);
+  --x-bg-color-overlay-transparent-lighter: rgba(0, 0, 0, 0.1); */
   /* border */
+
   --x-border-width: 1px;
   --x-border-style: solid;
   --x-border-color-light-3: var(--x-color-primary-light-3);
@@ -71,5 +84,9 @@
   --x-text-disabled-text-color: var(--x-color-info-dark-2);
   --x-text-disabled-border-color: var(--x-border-color-light);
 
-  --x-transition-duration:1s;
+  /* shadow */
+  --x-box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  --x-box-shadow-dark: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
+
+  --x-transition-duration: 1s;
 }
