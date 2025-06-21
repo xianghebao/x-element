@@ -10,7 +10,7 @@ export interface MenuOption {
 
 export interface DropdownProps extends TooltipProps {
     menuOptions:MenuOption[];
-    hideAfterClick:true;
+    hideAfterClick?:boolean;
 }
 
 export interface DropdownEmits {

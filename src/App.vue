@@ -1,34 +1,34 @@
 <script setup lang="ts">
-import { ref, onMounted,h } from "vue";
+import { ref, onMounted, h } from "vue";
 import Collapse from "./components/Collapse/XCollapse.vue";
 import CollapseItem from "./components/Collapse/XCollapseItem.vue";
 import Button from "./components/Button/XButton.vue";
 import Icon from "./components/Icon/XIcon.vue";
 import Dropdown from "./components/Dropdown/XDropdown.vue";
 import Tooltip from "./components/Tooltip/XTooltip.vue";
-import type {TooltipInstance} from './components/Tooltip/types'
-const trigger = "hover"
+import type { TooltipInstance } from "./components/Tooltip/types";
+const trigger = "click";
 const buttonRef = ref<HTMLButtonElement>();
 const openValue = ref(["a"]);
 const TooltipRef = ref<TooltipInstance>();
-const onk = () =>{
-  TooltipRef.value?.show()
-}
+const onTooltipClick = () => {
+  TooltipRef.value?.show();
+};
 onMounted(() => {
   console.log(buttonRef.value);
 });
 const options = [
-{key:1,label:h('b','this is h')},
-{key:2,label:'aaaa',disabled:true},
-{key:3,label:'xxxx'},
-{key:4,label:'ffff'}
-]
+  { key: 1, label: h("b", "this is h") },
+  { key: 2, label: "aaaa", disabled: true },
+  { key: 3, label: "xxxx" },
+  { key: 4, label: "ffff" },
+];
 </script>
 
 <template>
   <a href="">button</a>
   <main>
-    <!-- <Button ref="buttonRef" type="primary" plain @click="onk"> test button </Button> -->
+    <Button ref="buttonRef" type="primary" plain @click="onTooltipClick"> test button </Button>
     <Button ref="buttonRef" type="success" round> test button </Button>
     <Button ref="buttonRef" type="warning"> test button </Button>
     <Button ref="buttonRef" type="warning" disabled> test button </Button>
@@ -62,21 +62,20 @@ const options = [
     <Icon icon="fa-solid fa-house" type="primary" />
     <Icon icon="fa-solid fa-user-secret" type="primary" color="red" />
   </div>
-  <a href="">Tooltip</a><br/>
-  <Tooltip content="hellow word" placement="right" :trigger="trigger"   ref="TooltipRef">
+  <a href="">Tooltip</a><br />
+  <Tooltip content="hellow word" placement="right" :trigger="trigger" ref="TooltipRef">
     <h1>哈哈哈哈tooltip</h1>
     <!-- 传了具名插槽， 上面的content属性就失效了 -->
     <!-- <template #content>
       <h2>hellow word</h2>
     </template> -->
   </Tooltip>
-<div>
-  <a href="">dropdown</a>
-  <Dropdown :menu-options="options" trigger="click">
-    <span>芜湖</span>
-  </Dropdown>
-</div>
-
+  <div>
+    <a href="">dropdown</a>
+    <Dropdown :menu-options="options" trigger="click">
+      <span>芜湖</span>
+    </Dropdown>
+  </div>
 </template>
 
 <style scoped>
