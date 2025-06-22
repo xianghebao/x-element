@@ -7,6 +7,8 @@ import Icon from "./components/Icon/XIcon.vue";
 import Dropdown from "./components/Dropdown/XDropdown.vue";
 import Tooltip from "./components/Tooltip/XTooltip.vue";
 import type { TooltipInstance } from "./components/Tooltip/types";
+import Message  from "./components/Message/XMessage.vue";
+import  {createMessage}  from "./components/Message/method";
 const trigger = "click";
 const buttonRef = ref<HTMLButtonElement>();
 const openValue = ref(["a"]);
@@ -15,7 +17,7 @@ const onTooltipClick = () => {
   TooltipRef.value?.show();
 };
 onMounted(() => {
-  console.log(buttonRef.value);
+  createMessage({message:'ssss，啊哈哈哈',duration:0,showClose:true})
 });
 const options = [
   { key: 1, label: h("b", "this is h") },
@@ -76,6 +78,7 @@ const options = [
       <span>芜湖</span>
     </Dropdown>
   </div>
+  <!-- <Message message="hellow word" :duration="0" show-close></Message> -->
 </template>
 
 <style scoped>

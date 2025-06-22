@@ -67,7 +67,6 @@ const attachEvents = () => {
 };
 console.log(props)
 if (!props.manual) {
-  console.log("执行了")
   attachEvents();
 }
 
