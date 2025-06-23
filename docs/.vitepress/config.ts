@@ -1,6 +1,7 @@
 import { defineConfig } from "vitepress";
 // import vueJsx from "@vitejs/plugin-vue-jsx";
 import postcssEach from "postcss-each";
+import { fileURLToPath, URL } from "node:url";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -9,11 +10,16 @@ export default defineConfig({
   // srcDir: "components",
   vite: {
     // plugins: [vueJsx()],
-     css: {
-    postcss: {
-      plugins: [postcssEach()],
+    css: {
+      postcss: {
+        plugins: [postcssEach()],
+      },
     },
-  },
+    resolve: {
+      alias: {
+        "@": fileURLToPath(new URL("../../src", import.meta.url)),
+      },
+    },
   },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
@@ -32,13 +38,15 @@ export default defineConfig({
       },
       {
         text: "Basic",
-        items: [{ text: "Button", link: "/components/button" },
-          { text: "Collapse", link: "/components/Collapse" },
+        items: [
           { text: "Icon", link: "/components/Icon" },
-          { text: "Tooltip", link: "/components/Tooltip" }
+          { text: "Button", link: "/components/button" },
+          { text: "Collapse", link: "/components/Collapse" },
+          { text: "Tooltip", link: "/components/Tooltip" },
+          { text: "Message", link: "/components/Message" },
+          { text: "Dropdown", link: "/components/Dropdown" },
         ],
-        
-      }
+      },
     ],
 
     socialLinks: [{ icon: "github", link: "https://github.com/vuejs/vitepress" }],

@@ -7,10 +7,10 @@
     --x-collapse-content-text-color: var(--x-fill-color-primary);
     --x-collapse-disabled-text-color: var(--x-disabled-text-color);
     --x-collapse-disabled-border-color: var(--x-border-color-light-5);
-    --x-collapse-header-font-size: 13px;
-    --x-collapse-content-font-size: 13px;
-    border-top: 1px solid var(--x-collapse-border-color);
-    border-bottom: 1px solid var(--x-collapse-border-color);
+    --x-collapse-header-font-size: 16px;
+    --x-collapse-content-font-size: 12px;
+    /* border-top: 1px solid var(--x-collapse-border-color);
+    border-bottom: 1px solid var(--x-collapse-border-color); */
 }
 
 .x-collapse-item__header {
@@ -24,17 +24,17 @@
     color: var(--x-collapse-header-text-color);
     background-color: var(--x-collapse-header-bg-color);
     cursor: pointer;
-    font-weight: 500;
+    font-weight: 800;
     transition: border-bottom-color var(--x-transition-duration);
-    border-bottom: 1px solid var(--x-collapse-border-color);
+    /* border-bottom: 1px solid var(--x-collapse-border-color); */
     &.is-disabled  {
         color: var(--x-text-disabled-text-color);
         cursor: not-allowed;
         background-image: none;
-    }   
+    }
     &.is-active {
         border-bottom-color: transparent;
-    } 
+    }
 }
 .x-collapse-item__content {
     will-change: height;
@@ -46,7 +46,7 @@
     border-bottom: 1px solid var(--x-collapse-border-color);
 
     /* 这个padding在动画中会有问题,通过外加一个父元素盒子包裹解决 */
-    padding-bottom:25px;    
+    padding-bottom:10px;
 }
 
 
@@ -54,7 +54,7 @@
     transition: height var(--x-transition-duration) ease-in-out;
 }
 
-
+/* 这个换成了动画的生命周期 */
 /* .fade-enter-from {
     opacity: 0;
 }

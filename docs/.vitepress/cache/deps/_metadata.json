@@ -1,41 +1,56 @@
 {
-  "hash": "c5e0e3ae",
-  "configHash": "a081d1dd",
+  "hash": "4032c616",
+  "configHash": "db4a2825",
   "lockfileHash": "7d06af6f",
-  "browserHash": "69bf01aa",
+  "browserHash": "b3de01db",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "6c8f815e",
+      "fileHash": "09bff7e4",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "81f97219",
+      "fileHash": "4b3509ca",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../../node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "1cea2f51",
+      "fileHash": "9dbaba38",
       "needsInterop": false
     },
     "@fortawesome/fontawesome-svg-core": {
       "src": "../../../../node_modules/@fortawesome/fontawesome-svg-core/index.mjs",
       "file": "@fortawesome_fontawesome-svg-core.js",
-      "fileHash": "3a287f8e",
+      "fileHash": "0a162859",
       "needsInterop": false
     },
     "@fortawesome/free-solid-svg-icons": {
       "src": "../../../../node_modules/@fortawesome/free-solid-svg-icons/index.mjs",
       "file": "@fortawesome_free-solid-svg-icons.js",
-      "fileHash": "d8100cf9",
+      "fileHash": "180f4a82",
+      "needsInterop": false
+    },
+    "@fortawesome/vue-fontawesome": {
+      "src": "../../../../node_modules/@fortawesome/vue-fontawesome/index.es.js",
+      "file": "@fortawesome_vue-fontawesome.js",
+      "fileHash": "724b4cb8",
+      "needsInterop": false
+    },
+    "@popperjs/core": {
+      "src": "../../../../node_modules/@popperjs/core/lib/index.js",
+      "file": "@popperjs_core.js",
+      "fileHash": "072b4941",
       "needsInterop": false
     }
   },
   "chunks": {
+    "chunk-3IJK52MP": {
+      "file": "chunk-3IJK52MP.js"
+    },
     "chunk-FA4MWVOB": {
       "file": "chunk-FA4MWVOB.js"
     }

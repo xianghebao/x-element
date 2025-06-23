@@ -1,0 +1,45 @@
+.x-message{
+  --x-message-bg-color: var(--x-color-primary-light-3);
+  --x-message-text-color: var(--x-color-primary);
+  --x-icon-color: var(--x-color-primary);
+}
+
+.x-message {
+  width: max-content;
+  position: fixed;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+  box-shadow: var(--x-box-shadow-light);
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-radius: var(--x-border-radius);
+  background-color: var(--x-message-bg-color);
+  color: var(--x-message-text-color);
+  justify-content: space-around;
+  transition: opacity var(--x-transition-duration) ease-in-out,top var(--x-transition-duration),transform var(--x-transition-duration);
+  .x-message__close {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: var(--x-icon-color);
+  }
+}
+
+@each $val in info, success, warning, error {
+  .x-message--$(val){
+    --x-message-bg-color: var(--x-color-$(val)-light-5);
+    --x-message-text-color: var(--x-color-$(val));
+    .x-message__close{
+      --x-icon-color: var(--x-color-$(val));
+    }
+  }
+}
+
+.fade-leave-to,
+.fade-enter-from {
+  opacity: 0;
+  transform: translate(-50%, -100%);
+}

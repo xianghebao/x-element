@@ -61,8 +61,8 @@
 
 @each $val in primary, success, warning, danger {
   .x-button--$(val) {
-    --x-button-color: var(--x-color-$(val));
-    --x-button-background-color: var(--x-color-$(val)-light-5);
+    /* --x-button-color: var(--x-color-$(val)); */
+    --x-button-background-color: var(--x-color-$(val)-light-3);
     --x-button-border-color: var(--x-color-$(val));
     --x-button-hover-color: var(--x-color-$(val)-dark-2);
     --x-button-hover-background-color: var(--x-color-$(val)-light-9);

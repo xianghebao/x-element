@@ -18,7 +18,7 @@ import { onUnmounted, reactive, ref, watch } from "vue";
 import type { TooltipEmits, TooltipInstance, TooltipProps } from "./types";
 import type { Instance } from "@popperjs/core";
 import { createPopper } from "@popperjs/core";
-import useClickOutside from "@/hooks/useClickOutside";
+import useClickOutside from "../../hooks/useClickOutside";
 const props = withDefaults(defineProps<TooltipProps>(), {
   placement: "bottom",
   trigger: "hover",
@@ -65,7 +65,6 @@ const attachEvents = () => {
     events["click"] = togglePopper;
   }
 };
-console.log(props)
 if (!props.manual) {
   attachEvents();
 }

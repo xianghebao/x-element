@@ -1,5 +1,5 @@
 import type { Ref, InjectionKey } from "vue";
-type NameType = string | number;
+export type NameType = string | number;
 
 export interface CollapseItemProps {
   name: NameType;

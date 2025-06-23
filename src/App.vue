@@ -7,8 +7,8 @@ import Icon from "./components/Icon/XIcon.vue";
 import Dropdown from "./components/Dropdown/XDropdown.vue";
 import Tooltip from "./components/Tooltip/XTooltip.vue";
 import type { TooltipInstance } from "./components/Tooltip/types";
-import Message  from "./components/Message/XMessage.vue";
-import  {createMessage}  from "./components/Message/method";
+// import Message  from "./components/Message/XMessage.vue";
+import { createMessage } from "./components/Message/method";
 const trigger = "click";
 const buttonRef = ref<HTMLButtonElement>();
 const openValue = ref(["a"]);
@@ -17,7 +17,19 @@ const onTooltipClick = () => {
   TooltipRef.value?.show();
 };
 onMounted(() => {
-  createMessage({message:'ssss，啊哈哈哈',duration:0,showClose:true})
+  createMessage({ message: "hellow" });
+  createMessage({ message: "第二个hellow", duration: 0, showClose: true, type: "success" });
+  createMessage({ message: "第三个hellow", showClose: true, type: "error" });
+  createMessage({
+    message: "哦豁！！！！",
+    duration: 0,
+    showClose: true,
+  });
+
+  // 模拟手动删除
+  //   setTimeout(() => {
+  //   Instance.destroy()
+  // },2000)
 });
 const options = [
   { key: 1, label: h("b", "this is h") },
@@ -28,15 +40,14 @@ const options = [
 </script>
 
 <template>
-  <a href="">button</a>
+  <h2>button</h2>
   <main>
     <Button ref="buttonRef" type="primary" plain @click="onTooltipClick"> test button </Button>
     <Button ref="buttonRef" type="success" round> test button </Button>
     <Button ref="buttonRef" type="warning"> test button </Button>
-    <Button ref="buttonRef" type="warning" disabled> test button </Button>
+    <Button ref="buttonRef" type="info" disabled> test button </Button>
   </main>
-
-  <a href="">Collapse</a>
+  <h2>collapse</h2>
   <Collapse v-model="openValue">
     <CollapseItem title="title1" name="a">
       <template #header>
@@ -59,26 +70,22 @@ const options = [
       </template>
     </CollapseItem>
   </Collapse>
-  <a href="">icon</a>
+  <h2>icon</h2>
   <div>
     <Icon icon="fa-solid fa-house" type="primary" />
     <Icon icon="fa-solid fa-user-secret" type="primary" color="red" />
   </div>
-  <a href="">Tooltip</a><br />
+  <h2>Tooltip</h2>
   <Tooltip content="hellow word" placement="right" :trigger="trigger" ref="TooltipRef">
     <h1>哈哈哈哈tooltip</h1>
-    <!-- 传了具名插槽， 上面的content属性就失效了 -->
-    <!-- <template #content>
-      <h2>hellow word</h2>
-    </template> -->
   </Tooltip>
+  <h2>Dropdown 点击下面的芜湖</h2>
   <div>
-    <a href="">dropdown</a>
     <Dropdown :menu-options="options" trigger="click">
       <span>芜湖</span>
     </Dropdown>
   </div>
-  <!-- <Message message="hellow word" :duration="0" show-close></Message> -->
+  <!-- <Message message="hellow word" :duration="0" show-close></Message> 这个主要是实现方法的模板-->
 </template>
 
 <style scoped>

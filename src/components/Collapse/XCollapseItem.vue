@@ -18,7 +18,9 @@
     </div>
     <Transition name="slide" v-on="transitionEvents">
       <div class="x-collapse-item__wrap" v-show="isActive">
-        <div class="x-collapse-item__content" :id="`item-content-${name}`">content</div>
+        <div class="x-collapse-item__content" :id="`item-content-${name}`">
+          <slot name="content">content</slot>
+        </div>
       </div>
     </Transition>
   </div>
